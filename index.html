@@ -3,82 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEIZED</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>niggerniggerniggernigger</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #dc3545, #ffc107, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #333;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: liquidFlow 20s linear infinite;
+            opacity: 0.5;
+        }
+        @keyframes liquidFlow {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(50%, 50%) rotate(360deg); }
+        }
+        .hero {
             height: 100vh;
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: center;
-            align-items: center;
-            background-color: #1a1a1a;
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            position: relative;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg') center/cover no-repeat;
+            animation: heroPulse 4s ease-in-out infinite alternate;
         }
-
-        .ghost-icon {
-            font-size: 100px;
+        @keyframes heroPulse {
+            0% { filter: brightness(1); }
+            100% { filter: brightness(1.1); }
+        }
+        .hero h1 {
+            font-size: 4rem;
+            color: #ffc107;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: glow 2s ease-in-out infinite alternate;
             margin-bottom: 20px;
-            animation: float 3s ease-in-out infinite;
         }
-
-        .text {
-            font-size: 48px;
-            letter-spacing: 5px;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        @keyframes glow {
+            0% { text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 20px #ffc107; }
+            100% { text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 30px #ffc107; }
         }
-
-        .telegram-icon {
-            position: fixed;
-            bottom: 40px;
-            right: 30px;
-            font-size: 40px;
-            color: #ffffff;
-            transition: transform 0.3s ease, filter 0.3s ease;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .random-img {
+            position: absolute;
+            width: 80px;
+            height: auto;
+            opacity: 0.3;
+            animation: floatRandom 6s ease-in-out infinite;
+            z-index: 1;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-
-        .contact-text {
-            font-size: 12px;
-            margin-top: 5px;
-            opacity: 0.8;
+        .random-img.epstein {
+            width: 60px;
+            opacity: 0.2;
+            filter: grayscale(100%);
         }
-
-        .telegram-icon:hover {
-            transform: scale(1.2);
-            filter: brightness(1.2);
+        @keyframes floatRandom {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(5deg); }
+            66% { transform: translateY(10px) rotate(-5deg); }
         }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .section.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            color: #dc3545;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            background: rgba(255,193,7,0.1);
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            border-left: 4px solid #dc3545;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.1);
+            color: white;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
-    <div class="ghost-icon">
-        <i class="fas fa-ghost"></i>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Donald J. Trump</h1>
+        <p style="color: white; font-size: 1.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">The 45th & 47th President of the United States</p>
+        <!-- Spam random Trump images in hero -->
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg" style="top: 10%; left: 5%;">
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg" style="top: 20%; right: 10%;">
+        <img class="random-img epstein" src="https://upload.wikimedia.org/wikipedia/commons/6/62/Jeffrey_Epstein_mug_shot.jpg" style="bottom: 30%; left: 15%;">
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Donald_Trump_%2850548265318%29.jpg" style="bottom: 10%; right: 20%;">
+        <img class="random-img epstein" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Epstein_2013_mugshot.jpg" style="top: 40%; left: 70%;">
     </div>
-    <div class="text">
-        SEIZED
-    </div>
-    <a href="https://t.me/suixxide" target="_blank" class="telegram-icon">
-        <i class="fab fa-telegram"></i>
-        <span class="contact-text">contact</span>
-    </a>
+
+    <!-- Biography Section -->
+    <section class="glass section" id="bio">
+        <h2>Biography</h2>
+        <p>Donald John Trump, born on June 14, 1946, in Queens, New York, is an American politician, media personality, and businessman who served as the 45th President of the United States from 2017 to 2021 and was elected as the 47th President in 2024, taking office in 2025.</p>
+        <p>Trump's early career was in real estate, where he expanded his father's company into a multimillion-dollar enterprise. He became a prominent figure in New York City through high-profile projects like Trump Tower.</p>
+        <!-- Random spam images -->
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg" style="top: 20px; right: 20px; width: 120px; opacity: 0.4;">
+        <img class="random-img epstein" src="https://upload.wikimedia.org/wikipedia/commons/6/62/Jeffrey_Epstein_mug_shot.jpg" style="top: 100px; left: 50px; width: 70px;">
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="glass section" id="achievements">
+        <h2>Key Achievements</h2>
+        <ul>
+            <li>Launched the Space Force as the sixth branch of the U.S. Armed Forces.</li>
+            <li>Negotiated the Abraham Accords, fostering peace in the Middle East.</li>
+            <li>Passed the Tax Cuts and Jobs Act, reducing corporate tax rates.</li>
+            <li>Operation Warp Speed accelerated COVID-19 vaccine development.</li>
+            <li>Appointed three Supreme Court justices during his first term.</li>
+        </ul>
+        <!-- More spam -->
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Donald_Trump_%2850548265318%29.jpg" style="top: 50px; left: 10%; width: 100px;">
+        <img class="random-img epstein" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Epstein_2013_mugshot.jpg" style="bottom: 20px; right: 30%; width: 50px;">
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg" style="top: 150px; right: 40%; width: 90px; opacity: 0.6;">
+    </section>
+
+    <!-- Policies Section -->
+    <section class="glass section" id="policies">
+        <h2>Vision for America</h2>
+        <p>In his second term, President Trump focuses on America First policies, including border security, economic growth, and energy independence.</p>
+        <p>Key initiatives include reducing regulations, promoting fair trade, and protecting American workers.</p>
+        <!-- Spam overload -->
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg" style="top: 10px; left: 20%;">
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Donald_Trump_%2850548265318%29.jpg" style="top: 80px; right: 15%;">
+        <img class="random-img epstein" src="https://upload.wikimedia.org/wikipedia/commons/6/62/Jeffrey_Epstein_mug_shot.jpg" style="top: 200px; left: 60%;">
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg" style="bottom: 50px; left: 80%; width: 110px;">
+        <img class="random-img epstein" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Epstein_2013_mugshot.jpg" style="top: 300px; right: 50%;">
+    </section>
+
+    <!-- Quotes Section -->
+    <section class="glass section" id="quotes">
+        <h2>Inspiring Quotes</h2>
+        <ul>
+            <li>"Make America Great Again."</li>
+            <li>"The future belongs to the bold."</li>
+            <li>"Together, we will make America wealthy again."</li>
+            <li>"America will never be a socialist country."</li>
+        </ul>
+        <!-- Final spam burst -->
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Donald_Trump_%2850548265318%29.jpg" style="top: 30px; left: 5%;">
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg" style="top: 120px; right: 25%;">
+        <img class="random-img epstein" src="https://upload.wikimedia.org/wikipedia/commons/6/62/Jeffrey_Epstein_mug_shot.jpg" style="bottom: 10px; left: 40%;">
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Donald_Trump_%2850548265318%29.jpg" style="top: 250px; left: 70%;">
+        <img class="random-img epstein" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Epstein_2013_mugshot.jpg" style="bottom: 80px; right: 10%; width: 40px;">
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Donald J. Trump Legacy Foundation. All rights reserved.</p>
+        <!-- One last random -->
+        <img class="random-img" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg" style="position: absolute; top: 10px; left: 50%; width: 50px; opacity: 0.4;">
+    </footer>
+
+    <script>
+        // Scroll animations for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Randomize positions for extra spam on load
+        document.querySelectorAll('.random-img').forEach(img => {
+            const maxX = window.innerWidth - 100;
+            const maxY = window.innerHeight - 100;
+            img.style.left = Math.random() * maxX + 'px';
+            img.style.top = Math.random() * maxY + 'px';
+        });
+    </script>
 </body>
 </html>
